@@ -1,0 +1,54 @@
+<h1 id="maq-web-service-template">MAQ Web Service Template</h1>
+<h2 id="introduction">Introduction</h2>
+<p>MAQ Web Service is designed to provide a ready platform for the components like Swagger, CORS and Excel export functionality. Once installed, we can create a new project and start using the services and functionality directly. This can be used as a base code while starting with a new project, thus saving developers time. User can add and remove the unwanted files as per their requirements</p>
+<h2 id="feature-list">Feature list</h2>
+<ol style="list-style-type: decimal">
+<li>CORS Policy</li>
+<li>Swagger API</li>
+<li>Export to Excel</li>
+<li>Read Markdown file</li>
+</ol>
+<h3 id="cors-policy">CORS Policy:</h3>
+<p>It’s a mechanism that allows restricted resources (e.g. fonts, videos) on a web page to be requested from another domain outside the domain from which the resource originated. As a best practice at MAQ we tend to keep configurable attributes, but this is not possible out-of-the box for CORS attributes e.g. origins, options, methods since they accept constant values. To make these values configurable we must create a custom CORS policy and use it for our WebAPI. This solution removes the need for rebuilding the solution after changing CORS attributes.</p>
+<h3 id="swagger">Swagger:</h3>
+<p>Swagger UI is a dependency-free collection of HTML, JavaScript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API. With a Swagger-enabled API, you get interactive documentation, client SDK generation and discoverability.</p>
+<h3 id="export-to-excel">Export to Excel:</h3>
+<p>Sometimes, it is required to export your data into the Excel file in web application. ClosedXML makes it easier to create Excel 2010/2016 files. It provides a nice object oriented way to manipulate the files (like VBA) without dealing with the hassles of XML Documents.</p>
+<h3 id="markdown-file">Markdown File</h3>
+<p>Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name</p>
+<h2 id="how-to-install-the-template">How to install the template</h2>
+<p>There are two ways we can use these services. 1. Clone this repository from the top right corner or use the command</p>
+<pre><code>$ git clone</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Install the Template in Visual Studio following below steps.
+<ol style="list-style-type: decimal">
+<li>Open Visual Studio (above Visual Studio 2012)</li>
+<li>Go to Tools &gt; Extension and Updates</li>
+<li>Select Online on left pane</li>
+<li>Under Visual Studio Gallery, search for <code>MAQ Web Service</code></li>
+<li>Install the template.</li>
+<li>Upon creating a new project, <code>MAQ Web Service</code> will be a new option available under Visual C#</li>
+</ol></li>
+</ol>
+<h2 id="how-to-use-the-template">How to use the template</h2>
+<p>To use the template, follow the below steps. 1. Create a new project by selecting Visual C# &gt; MAQ Web Service 2. A complete project of Web service will be loaded in your solution. 3. We can set the HTML page as a start up page and execute the project.</p>
+<h3 id="cors">CORS</h3>
+<p>Defination for CORS are maintained under WebConfig.config file of the project.</p>
+<pre><code>&lt;appSettings&gt;
+      &lt;!--CORS Settings--&gt;
+    &lt;add key=&quot;CORSOrigins&quot; value=&quot;*&quot; /&gt;
+    &lt;add key=&quot;AllowedOrigins&quot; value=&quot;*&quot; /&gt;
+    &lt;add key=&quot;PreflightMaxAge&quot; value=&quot;3600&quot; /&gt;
+&lt;/appSettings&gt;</code></pre>
+<p>CORSOrigins and AllowedOrigins values should be changed as per the requirments.</p>
+<h3 id="swagger-1">Swagger</h3>
+<p>Swagger currently consists of Get and Post methods. Differnet methods can be created under SwaggerController.cs file.</p>
+<h3 id="export-to-excel-1">Export to Excel</h3>
+<p>Export to Excel has been implemented in two ways. 1. Using Web Service 2. Using aspx page</p>
+<p>Using Web Service for Export to Excel: To use export to Excel, data is currently present for 3 columns. Columns are seperated based on &quot;;&quot; operator and Rows are seperated based on &quot;|&quot; operator. Changes for web service can be performed under file ExportToExcelController.cs 1. Id 2. First Name 3. Last Name</p>
+<p>Using aspx for Export to Excel: To use export to Excel, data is currently present for 3 columns. Columns are seperated based on &quot;;&quot; operator and Rows are seperated based on &quot;|&quot; operator. Changes for aspx page can be performed under file ExportExcel.aspx and ExportExcel.aspx.cs</p>
+<h3 id="read-markdown-file">Read Markdown file</h3>
+<p>Markdown file is read under WebService.js file. readTextFile() method used to convert to markdown file into HTML format.</p>
+
+<h2 id="introduction">Known Issues</h2>
+<p>Swagger fails to validate the input type FileStream for Export to Excel.</p>

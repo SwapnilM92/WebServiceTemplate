@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MAQ Web template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container" id="bodyContainer">
+        <ul class="nav nav-pills nav-justified">
+            <li class="active" data-id="1"><a data-toggle="pill" data-id="1">Home</a></li>
+            <li data-id="2"><a data-toggle="pill" data-id="2">Swagger</a></li>
+            <li data-id="3"><a data-toggle="pill" data-id="3">Export to Excel</a></li>
+        </ul>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <div class="Home" id="Home">
+                </div>
+                <div class="Swagger" id="Swagger">
+                </div>
+                <div class="Excel" id="Excel">
+                    <h2>
+                        Demo format for Excel.
+                    </h2>
+                    <p>
+                        Use ; for new Column and | for new Row.
+                    </p>
+                    <p>
+                        e.g. 1;ABCD;WXYZ| 2;QWE;RTY|
+                    </p>
+                    <textarea contenteditable="true" class="form-control" rows="5" id="container"></textarea>
+                    <div>
+                        <button type="button" value="Import Data" class="btn-info btn sampleData" id="sampleData">Sample Data</button>
+                        <button type="button" value="Clear Data" class="btn-info btn clearData" id="clearData">Clear Data</button>
+                        <button type="button" value="Export Data Service" class="btn-info btn exportDataService" id="exportDataService">Export Data from Service</button>
+                        <button type="button" value="Export Data" class="btn-info btn pull-right exportData" id="exportData">Export Data</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.5.0/showdown.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.5.0/showdown.min.js"></script>
+    <script type="text/javascript" src="../Scripts/Custom/WebService.js"></script>
+</body>
+</html>
